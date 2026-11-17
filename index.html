@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripova - Daily Travel</title>
+    <style>
+    .buttons, .mobile-buttons { visibility: hidden; }
+    .buttons.auth-ready, .mobile-buttons.auth-ready { visibility: visible; }
+</style>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header id="main-header">
+       <div class="logo"><img src="tripova-mark.svg" alt="Tripova" class="logo-icon"> Tripova</div>
+
+
+        <nav id="main-nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="flight.html">Flights</a>
+    <a href="hotel.html">Hotels</a>
+    <a href="about.html">About</a>
+    <a href="booking.html">My Bookings</a>
+    <a href="contact.html">Contact</a>
+</nav>
+        <div class="header-right">
+            <div class="buttons">
+                <button class="login" id="loginBtn">Log In</button>
+                <button class="signup" id="signupBtn">Sign Up</button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-text">
+            <span class="hero-badge"><i class="fa-solid fa-star"></i> #1 Travel Platform in Thailand</span>
+            <h1>Travel Memories<br>You'll <span class="highlight">Never</span> Forget</h1>
+            <p>Explore the world with unforgettable adventures and handpicked destinations curated by local experts.</p>
+            <div class="hero-actions">
+                <a href="destinations.html" class="btn-primary">
+                    <i class="fa-solid fa-compass"></i> Explore Now
+                </a>
+                <a href="flight.html" class="btn-outline">
+                    <i class="fa-solid fa-plane"></i> Find Flights
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong>500+</strong>
+                    <span>Destinations</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <strong>50k+</strong>
+                    <span>Happy Travelers</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <strong>4.9★</strong>
+                    <span>Avg. Rating</span>
+                </div>
+            </div>
+        </div>
+
+      <div class="hero-image">
+    <div class="hero-img-wrapper">
+<img src="tripova_globe_pin_logo.svg" alt="Tripova - your gateway to Thailand">
+</div>
+        </div>
+    </section>
+
+
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="features-section">
+        <div class="section-title">
+            <span class="section-badge">Why Tripova</span>
+            <h2>Everything You Need for the Perfect Trip</h2>
+            <p>We handle the details so you can focus on the memories</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <h3>Global Destinations</h3>
+                <p>Access to 500+ destinations worldwide with expert local guides ready to show you the best spots</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-tag"></i>
+                </div>
+                <h3>Best Price Guarantee</h3>
+                <p>Find it cheaper anywhere else? We'll refund the full difference — no questions, no hassle</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Our travel experts are on standby around the clock to help you wherever you are in the world</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+                <h3>Safe & Insured</h3>
+                <p>Every trip is fully insured with COVID-safe certified partners for your complete peace of mind</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== POPULAR TOURS ===== -->
+    <section class="popular-tours">
+        <div class="section-title">
+            <span class="section-badge">Trending Now</span>
+            <h2>Popular Tours</h2>
+            <p>Most booked experiences this month</p>
+        </div>
+
+        <div class="tours-container">
+            <div class="tour-card">
+                <div class="tour-img-wrap">
+                    <img src="Thai Island Hopper.png"
+                         alt="Thai Island Hopper"
+                         onerror="this.src='https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=800&auto=format&fit=crop'">
+                    <div class="tour-badge">Best Seller</div>
+                </div>
+                <div class="tour-content">
+                    <div class="tour-meta">
+                        <span><i class="fa-solid fa-clock"></i> 10 days</span>
+                        <span class="tour-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <h3>Thai Island Hopper</h3>
+                    <p class="tour-route"><i class="fa-solid fa-route"></i> Phuket → Krabi → Koh Samui</p>
+                    <div class="tour-footer">
+                        <div class="tour-price">฿1,999 <span>/ person</span></div>
+                        <a href="destinations.html" class="view-tour">View Tour</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-card">
+                <div class="tour-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=800&auto=format&fit=crop"
+                         alt="Northern Thailand Explorer">
+                    <div class="tour-badge popular">Popular</div>
+                </div>
+                <div class="tour-content">
+                    <div class="tour-meta">
+                        <span><i class="fa-solid fa-clock"></i> 7 days</span>
+                        <span class="tour-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                    </div>
+                    <h3>Northern Explorer</h3>
+                    <p class="tour-route"><i class="fa-solid fa-route"></i> Chiang Mai → Pai → Chiang Rai</p>
+                    <div class="tour-footer">
+                        <div class="tour-price">฿8,999 <span>/ person</span></div>
+                        <a href="destinations.html" class="view-tour">View Tour</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-card">
+                <div class="tour-img-wrap">
+                    <img src="bangkok.png"
+                         alt="Bangkok City Adventure"
+                         onerror="this.src='https://images.unsplash.com/photo-1563492065599-3520f775eeed?q=80&w=800&auto=format&fit=crop'">
+                    <div class="tour-badge new">New</div>
+                </div>
+                <div class="tour-content">
+                    <div class="tour-meta">
+                        <span><i class="fa-solid fa-clock"></i> 4 days</span>
+                        <span class="tour-rating"><i class="fa-solid fa-star"></i> 4.7</span>
+                    </div>
+                    <h3>Bangkok City Adventure</h3>
+                    <p class="tour-route"><i class="fa-solid fa-route"></i> Temples → Markets → Street Food</p>
+                    <div class="tour-footer">
+                        <div class="tour-price">฿4,499 <span>/ person</span></div>
+                        <a href="destinations.html" class="view-tour">View Tour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="view-all-wrap">
+            <a href="destinations.html" class="btn-primary">
+                View All Destinations <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials">
+        <div class="section-title">
+            <span class="section-badge">Traveler Stories</span>
+            <h2>What Our Travelers Say</h2>
+            <p>Real experiences from real adventurers</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Tripova made planning our Thailand honeymoon so effortless. Every detail was perfect — from the hotels to the island tours. Absolutely magical!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div>
+                        <strong>Sarah M.</strong>
+                        <span>Bangkok & Phuket Trip</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card featured">
+                <div class="stars">★★★★★</div>
+                <p>"The 24/7 support team saved us when our connecting flight was cancelled. They sorted everything within an hour. This is how travel should feel."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">J</div>
+                    <div>
+                        <strong>James K.</strong>
+                        <span>Northern Explorer Tour</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Best price guaranteed is real! Found a cheaper deal and Tripova refunded the difference same day. Will use them for every trip from now on."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">A</div>
+                    <div>
+                        <strong>Aisha R.</strong>
+                        <span>Island Hopper Package</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section brand">
+                <div class="footer-logo"><i class="fa-solid fa-paper-plane"></i> Tripova</div>
+                <p>Creating unforgettable travel memories since 2020. Your adventure starts here.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="flight.html">Flights</a>
+                <a href="hotel.html">Hotels</a>
+                <a href="my-bookings.html">My Bookings</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Booking FAQs</a>
+                <a href="#">Cancellation Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-phone"></i> +66 2 123 4567</p>
+                <p><i class="fa-solid fa-envelope"></i> hello@tripova.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Bangkok, Thailand</p>
+                <p><i class="fa-solid fa-clock"></i> Mon–Fri, 9am–6pm</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Tripova | Daily Travel. All rights reserved.</p>
+            <p>Made with <i class="fa-solid fa-heart" style="color:#ff6b35"></i> for travelers</p>
+        </div>
+    </footer>
+
+    <!-- ===== AUTH MODAL ===== -->
+    <div class="modal" id="authModal">
+        <div class="modal-content auth-content">
+            <button class="close-modal" id="closeAuth" aria-label="Close"></button>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Log In</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+
+                <div class="auth-form active" id="login-form">
+                    <div class="auth-header">
+                        <h3>Welcome Back!</h3>
+                        <p>Log in to access your travel plans</p>
+                    </div>
+                    <input type="email" placeholder="Email Address" id="login-email">
+                    <input type="password" placeholder="Password" id="login-password">
+                    <button class="auth-submit" id="loginSubmit">Log In</button>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <div class="auth-form" id="signup-form">
+                    <div class="auth-header">
+                        <h3>Create Account</h3>
+                        <p>Join thousands of happy travelers</p>
+                    </div>
+                    <input type="text" placeholder="Full Name" id="signup-name">
+                    <input type="email" placeholder="Email Address" id="signup-email">
+                    <input type="password" placeholder="Password" id="signup-password">
+                    <input type="password" placeholder="Confirm Password" id="signup-confirm">
+                    <button class="auth-submit" id="signupSubmit">Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="auth.js"></script>
+    <script src="homepage.js"></script>
+</body>
+
+</html>

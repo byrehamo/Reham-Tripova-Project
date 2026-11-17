@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations | Tripova Travel Planner</title>
+    <style>
+    .buttons, .mobile-buttons { visibility: hidden; }
+    .buttons.auth-ready, .mobile-buttons.auth-ready { visibility: visible; }
+</style>
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="main-header">
+        <div class="logo">
+            <div class="logo"><img src="tripova-mark.svg" alt="Tripova" class="logo-icon"> Tripova</div>
+        </div>
+
+        <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="destinations.html" class="active">Destinations</a>
+            <a href="flight.html">Flights</a>
+            <a href="hotel.html">Hotels</a>
+            <a href="booking.html">My Bookings</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="buttons">
+                <button class="login" id="loginBtn">Log In</button>
+                <button class="signup" id="signupBtn">Sign Up</button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge"><i class="fa-solid fa-location-dot"></i> 6 Provinces · Thailand</span>
+            <h1>Explore Thailand's Most Beautiful Provinces</h1>
+            <p>Tropical islands, mountain adventures, cultural landmarks, and unforgettable experiences</p>
+
+            <div class="search-box">
+                <div class="search-input-wrap">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search a destination…" autocomplete="off">
+                </div>
+                <button id="searchBtn">Explore Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">
+                <i class="fa-solid fa-globe"></i> All
+            </button>
+            <button class="filter-tab" data-filter="beach">
+                <i class="fa-solid fa-umbrella-beach"></i> Beaches
+            </button>
+            <button class="filter-tab" data-filter="mountain">
+                <i class="fa-solid fa-mountain"></i> Mountains
+            </button>
+            <button class="filter-tab" data-filter="city">
+                <i class="fa-solid fa-city"></i> Cities
+            </button>
+            <button class="filter-tab" data-filter="nature">
+                <i class="fa-solid fa-tree"></i> Nature
+            </button>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <div class="section-title">
+            <span class="section-badge">Top Picks</span>
+            <h2>Popular Destinations</h2>
+            <p>Top provinces travelers love to visit in Thailand</p>
+        </div>
+
+        <div class="destination-container" id="destinationContainer">
+
+            <div class="card" data-category="beach">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=800&auto=format&fit=crop" alt="Phuket">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" data-dest="Phuket">
+                            <i class="fa-solid fa-eye"></i> Quick View
+                        </button>
+                    </div>
+                    <div class="card-badge"><i class="fa-solid fa-fire"></i> Hot</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-location"><i class="fa-solid fa-location-dot"></i> Southern Thailand</span>
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 4.9 <em>(12.5k)</em></span>
+                    </div>
+                    <h3>Phuket</h3>
+                    <p>Famous for crystal-clear beaches, luxury resorts, vibrant nightlife, and stunning island tours.</p>
+                    <div class="card-footer">
+                        <button class="view-btn" data-dest="Phuket">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-category="mountain">
+                <div class="card-img-wrap">
+                    <img src="chaingmai.png"
+                         alt="Chiang Mai"
+                         onerror="this.src='https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=800&auto=format&fit=crop'">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" data-dest="Chiang Mai">
+                            <i class="fa-solid fa-eye"></i> Quick View
+                        </button>
+                    </div>
+                    <div class="card-badge culture"><i class="fa-solid fa-landmark"></i> Culture</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-location"><i class="fa-solid fa-location-dot"></i> Northern Thailand</span>
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 4.8 <em>(9.8k)</em></span>
+                    </div>
+                    <h3>Chiang Mai</h3>
+                    <p>Known for mountains, ancient temples, local culture, night markets, and serene nature experiences.</p>
+                    <div class="card-footer">
+                        <button class="view-btn" data-dest="Chiang Mai">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-category="beach">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="Krabi">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" data-dest="Krabi">
+                            <i class="fa-solid fa-eye"></i> Quick View
+                        </button>
+                    </div>
+                    <div class="card-badge"><i class="fa-solid fa-fire"></i> Hot</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-location"><i class="fa-solid fa-location-dot"></i> Southern Thailand</span>
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 4.9 <em>(11.2k)</em></span>
+                    </div>
+                    <h3>Krabi</h3>
+                    <p>A paradise with towering limestone cliffs, emerald waters, hidden lagoons, and island-hopping adventures.</p>
+                    <div class="card-footer">
+                        <button class="view-btn" data-dest="Krabi">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-category="city">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?q=80&w=800&auto=format&fit=crop" alt="Bangkok">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" data-dest="Bangkok">
+                            <i class="fa-solid fa-eye"></i> Quick View
+                        </button>
+                    </div>
+                    <div class="card-badge popular"><i class="fa-solid fa-crown"></i> Most Visited</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-location"><i class="fa-solid fa-location-dot"></i> Central Thailand</span>
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 4.7 <em>(15.3k)</em></span>
+                    </div>
+                    <h3>Bangkok</h3>
+                    <p>Thailand's vibrant capital — world-famous street food, luxury hotels, ancient temples, and endless shopping.</p>
+                    <div class="card-footer">
+                        <button class="view-btn" data-dest="Bangkok">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-category="beach city">
+                <div class="card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=800&auto=format&fit=crop" alt="Pattaya">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" data-dest="Pattaya">
+                            <i class="fa-solid fa-eye"></i> Quick View
+                        </button>
+                    </div>
+                    <div class="card-badge fun"><i class="fa-solid fa-star"></i> Family</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-location"><i class="fa-solid fa-location-dot"></i> Eastern Thailand</span>
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 4.6 <em>(8.4k)</em></span>
+                    </div>
+                    <h3>Pattaya</h3>
+                    <p>A lively beach city popular for entertainment, water activities, family attractions, and island day-trips.</p>
+                    <div class="card-footer">
+                        <button class="view-btn" data-dest="Pattaya">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-category="nature mountain">
+                <div class="card-img-wrap">
+                    <img src="khaoyai.png"
+                         alt="Khao Yai"
+                         onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop'">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" data-dest="Khao Yai">
+                            <i class="fa-solid fa-eye"></i> Quick View
+                        </button>
+                    </div>
+                    <div class="card-badge nature"><i class="fa-solid fa-leaf"></i> Nature</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="card-location"><i class="fa-solid fa-location-dot"></i> Nakhon Ratchasima</span>
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 4.8 <em>(7.2k)</em></span>
+                    </div>
+                    <h3>Khao Yai</h3>
+                    <p>Thailand's oldest national park — stunning waterfalls, wildlife spotting, cool mountain air, and lush vineyards.</p>
+                    <div class="card-footer">
+                        <button class="view-btn" data-dest="Khao Yai">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="no-results" id="noResults" style="display:none">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <h3>No destinations found</h3>
+            <p>Try searching for "Phuket", "beach", or "mountains"</p>
+            <button onclick="document.getElementById('searchInput').value='';document.getElementById('searchBtn').click()">
+                Clear Search
+            </button>
+        </div>
+    </section>
+
+    <section class="why-visit">
+        <div class="why-text">
+            <span class="section-badge">Why Tripova</span>
+            <h2>Travel With Confidence</h2>
+            <p>Tripova helps you discover Thailand's finest destinations with expert recommendations, seamless planning, and trusted local knowledge at every step.</p>
+            <a href="index.html" class="btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Start Planning
+            </a>
+        </div>
+        <div class="features-boxes">
+            <div class="feature-box">
+                <div class="feature-box-icon">
+                    <i class="fa-solid fa-earth-asia"></i>
+                </div>
+                <h4>Best Destinations</h4>
+                <p>Handpicked spots loved by thousands of travelers</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-box-icon">
+                    <i class="fa-solid fa-hotel"></i>
+                </div>
+                <h4>Luxury Hotels</h4>
+                <p>Partner hotels with exclusive member discounts</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-box-icon">
+                    <i class="fa-solid fa-plane"></i>
+                </div>
+                <h4>Easy Booking</h4>
+                <p>Book flights, hotels, and tours in one place</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-box-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h4>24/7 Support</h4>
+                <p>Our team is always ready to help you anywhere</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section brand">
+                <div class="footer-logo"><i class="fa-solid fa-paper-plane"></i> Tripova</div>
+                <p>Creating unforgettable travel memories since 2020. Your adventure starts here.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="flight.html">Flights</a>
+                <a href="hotel.html">Hotels</a>
+                <a href="booking.html">My Bookings</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cancellation Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-phone"></i> +66 2 123 4567</p>
+                <p><i class="fa-solid fa-envelope"></i> hello@tripova.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Bangkok, Thailand</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Tripova | Daily Travel. All rights reserved.</p>
+            <p>Made with <i class="fa-solid fa-heart" style="color:#ff6b35"></i> for travelers</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="destModal">
+        <div class="modal-content" id="modalContent">
+            <button class="close-modal" id="closeModal" aria-label="Close"></button>
+            <img id="modal-img" src="" alt="Destination">
+            <div class="modal-info">
+                <div class="modal-tags" id="modal-tags"></div>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <div class="modal-details">
+                    <div class="detail-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span id="modal-location"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span id="modal-rating"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span>Best time: Nov – Apr</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-language"></i>
+                        <span>Thai · English</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        <span id="modal-price"></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <span id="modal-duration"></span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+            
+                    </button>
+                    <a href="flight.html" class="btn-outline-modal">
+                        <i class="fa-solid fa-ticket"></i> Find Flights
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="authModal">
+        <div class="modal-content auth-content">
+            <button class="close-modal" id="closeAuth" aria-label="Close"></button>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Log In</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+                <div class="auth-form active" id="login-form">
+                    <div class="auth-header">
+                        <h3>Welcome Back!</h3>
+                        <p>Log in to access your travel plans</p>
+                    </div>
+                    <input type="email" placeholder="Email Address" id="login-email">
+                    <input type="password" placeholder="Password" id="login-password">
+                    <button class="auth-submit" id="loginSubmit">Log In</button>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <div class="auth-form" id="signup-form">
+                    <div class="auth-header">
+                        <h3>Create Account</h3>
+                        <p>Join thousands of happy travelers</p>
+                    </div>
+                    <input type="text" placeholder="Full Name" id="signup-name">
+                    <input type="email" placeholder="Email Address" id="signup-email">
+                    <input type="password" placeholder="Password" id="signup-password">
+                    <input type="password" placeholder="Confirm Password" id="signup-confirm">
+                    <button class="auth-submit" id="signupSubmit">Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="destinations.js"></script>
+    <script src="auth.js"></script>
+
+</body>
+</html>

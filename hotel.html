@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripova - Hotel Booking</title>
+    <style>
+    .buttons, .mobile-buttons { visibility: hidden; }
+    .buttons.auth-ready, .mobile-buttons.auth-ready { visibility: visible; }
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hotel.css">
+</head>
+<body>
+
+<header>
+    
+           <div class="logo"><img src="tripova-mark.svg" alt="Tripova" class="logo-icon"> </i> Tripova</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="flight.html">Flights</a>
+        <a href="hotel.html" class="active">Hotels</a>
+        <a href="booking.html">My Bookings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="buttons">
+        <button class="login" id="loginBtn">Log In</button>
+        <button class="signup" id="signupBtn">Sign Up</button>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hotel-hero">
+    <div class="hero-content">
+        <span class="hero-badge"><i class="fa-solid fa-hotel"></i> 500+ Hotels & Resorts</span>
+        <h1>Find Your Perfect <span class="highlight">Stay</span> in Thailand</h1>
+        <p>From luxury beachfront resorts to cozy budget hotels — guaranteed lowest prices</p>
+    </div>
+</section>
+
+<section class="search-section">
+    <div class="search-card">
+        <h2><i class="fa-solid fa-magnifying-glass"></i> Search Hotels</h2>
+        <div class="search-form">
+            <div class="input-group">
+                <label><i class="fa-solid fa-location-dot"></i> Destination</label>
+                <input type="text" id="destination" placeholder="Bangkok, Phuket, Chiang Mai...">
+            </div>
+            <div class="input-group">
+                <label><i class="fa-regular fa-calendar"></i> Check-in</label>
+                <input type="date" id="checkin">
+            </div>
+            <div class="input-group">
+                <label><i class="fa-regular fa-calendar"></i> Check-out</label>
+                <input type="date" id="checkout">
+            </div>
+            <div class="input-group">
+                <label><i class="fa-solid fa-user-group"></i> Guests (Max 4)</label>
+                <div class="counter-wrapper">
+                    <button id="decGuests">−</button>
+                    <span id="guestCount">2</span>
+                    <button id="incGuests">+</button>
+                </div>
+            </div>
+            <div class="input-group">
+                <label><i class="fa-solid fa-bed"></i> Rooms</label>
+                <select id="rooms">
+                    <option value="1">1 Room</option>
+                    <option value="2">2 Rooms</option>
+                    <option value="3">3 Rooms</option>
+                    <option value="4">4 Rooms</option>
+                    <option value="5">5 Rooms</option>
+                </select>
+            </div>
+            <button class="search-btn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i> Search Hotels</button>
+        </div>
+    </div>
+</section>
+
+<section class="filters-section">
+    <div class="filters-container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Hotels</button>
+            <button class="filter-btn" data-filter="5star">5 Star <i class="fa-solid fa-star"></i></button>
+            <button class="filter-btn" data-filter="4star">4 Star <i class="fa-solid fa-star"></i></button>
+            <button class="filter-btn" data-filter="3star">3 Star <i class="fa-solid fa-star"></i></button>
+            <button class="filter-btn" data-filter="resort">Resort <i class="fa-solid fa-umbrella-beach"></i></button>
+            <button class="filter-btn" data-filter="budget">Budget <i class="fa-solid fa-coins"></i></button>
+        </div>
+        <div class="price-filter">
+            <label>Price per night: <span id="priceValue">Up to ฿20,000</span></label><br>
+            <input type="range" id="priceRange" min="0" max="20000" step="500" value="20000">
+        </div>
+    </div>
+</section>
+
+<section class="hotels-section">
+    <div class="section-header">
+        <span class="section-badge">Recommended Stays</span>
+        <h2>Popular Hotels in Thailand</h2>
+        <p>Handpicked accommodations with verified guest reviews</p>
+    </div>
+    <div class="hotels-grid" id="hotelsGrid"></div>
+    <div class="no-results" id="noResults" style="display: none;">
+        <i class="fa-solid fa-hotel"></i>
+        <h3>No hotels found</h3>
+        <p>Try adjusting your filters or search for another destination</p>
+        <button onclick="resetAllFilters()">Clear All Filters</button>
+    </div>
+</section>
+
+<section class="why-choose">
+    <div class="why-container">
+        <div class="why-text">
+            <span class="section-badge">Why Book With Us</span>
+            <h2>Best Price Guarantee</h2>
+            <p>Find a cheaper price elsewhere? We'll match it and give you 10% off your next stay.</p>
+            <div class="why-features">
+                <div class="why-feature"><i class="fa-solid fa-check-circle"></i><div><h4>Free Cancellation</h4><p>On most bookings</p></div></div>
+                <div class="why-feature"><i class="fa-solid fa-headset"></i><div><h4>24/7 Support</h4><p>Always here to help</p></div></div>
+                <div class="why-feature"><i class="fa-solid fa-tag"></i><div><h4>Best Rates</h4><p>Exclusive deals</p></div></div>
+                <div class="why-feature"><i class="fa-solid fa-shield-heart"></i><div><h4>Secure Booking</h4><p>Your data is safe</p></div></div>
+            </div>
+        </div>
+        <div class="why-stats">
+            <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Hotels Nationwide</div></div>
+            <div class="stat-card"><div class="stat-number">50k+</div><div class="stat-label">Happy Guests</div></div>
+            <div class="stat-card"><div class="stat-number">4.8★</div><div class="stat-label">Average Rating</div></div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section brand">
+            <div class="footer-logo"><i class="fa-solid fa-paper-plane"></i> Tripova</div>
+            <p>Creating unforgettable travel memories since 2020. Your adventure starts here.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="flight.html">Flights</a>
+            <a href="hotel.html">Hotels</a>
+            <a href="booking.html">My Bookings</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cancellation Policy</a>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><i class="fa-solid fa-phone"></i> +66 2 123 4567</p>
+            <p><i class="fa-solid fa-envelope"></i> hello@tripova.com</p>
+            <p><i class="fa-solid fa-location-dot"></i> Bangkok, Thailand</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Tripova | Daily Travel. All rights reserved.</p>
+        <p>Made with <i class="fa-solid fa-heart" style="color:#ff6b35"></i> for travelers</p>
+    </div>
+</footer>
+
+<script src="booking.js"></script>
+<script src="auth.js"></script>
+<script src="hotel.js"></script>
+</body>
+</html>

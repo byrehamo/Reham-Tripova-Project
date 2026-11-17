@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripova - Flight Booking</title>
+    <style>
+    .buttons, .mobile-buttons { visibility: hidden; }
+    .buttons.auth-ready, .mobile-buttons.auth-ready { visibility: visible; }
+</style>
+    <link rel="stylesheet" href="flight_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+        <div class="logo"><img src="tripova-mark.svg" alt="Tripova" class="logo-icon"> Tripova</div>
+
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="flight.html" class="active">Flights</a>
+        <a href="hotel.html">Hotels</a>
+        <a href="booking.html">My Bookings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="buttons">
+        <button class="login" id="loginBtn">Log In</button>
+        <button class="signup" id="signupBtn">Sign Up</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<section class="flight-hero">
+    <div class="flight-hero-content">
+        <h1>Find Your Perfect Flight</h1>
+        <p>Discover amazing destinations across Thailand at the best prices</p>
+    </div>
+</section>
+
+<section class="search-box">
+    <h2><i class="fa-solid fa-plane"></i> Search Flights</h2>
+    <div class="trip-type">
+        <label class="trip-option">
+            <input type="radio" name="tripType" value="oneway" checked> One Way
+        </label>
+        <label class="trip-option">
+            <input type="radio" name="tripType" value="roundtrip"> Round Trip
+        </label>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <label><i class="fa-solid fa-location-dot"></i> From</label>
+            <input type="text" id="fromCity" placeholder="Bangkok (BKK)">
+        </div>
+        <div class="input-group">
+            <label><i class="fa-solid fa-location-dot"></i> To</label>
+            <input type="text" id="toCity" placeholder="Phuket (HKT)">
+        </div>
+        <div class="input-group">
+            <label><i class="fa-regular fa-calendar"></i> Departure</label>
+            <input type="date" id="departureDate">
+        </div>
+        <div class="input-group" id="returnGroup">
+            <label><i class="fa-regular fa-calendar"></i> Return</label>
+            <input type="date" id="returnDate">
+        </div>
+        <div class="input-group">
+            <label><i class="fa-solid fa-user-group"></i> Passengers (Max 10)</label>
+            <div class="counter-control">
+                <button type="button" id="decPass">−</button>
+                <span id="passCount">1</span>
+                <button type="button" id="incPass">+</button>
+            </div>
+        </div>
+        <div class="input-group">
+            <label><i class="fa-solid fa-crown"></i> Class</label>
+            <select id="flightClass">
+                <option value="Economy">Economy Class</option>
+                <option value="Business">Business Class</option>
+                <option value="First">First Class</option>
+            </select>
+        </div>
+        <button class="search-flight-btn" id="searchFlightBtn">
+            <i class="fa-solid fa-magnifying-glass"></i> Search Flights
+        </button>
+    </div>
+</section>
+
+<h2 class="section-title">Popular Thailand Destinations</h2>
+<section class="flight-cards" id="flightCardsContainer"></section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section brand">
+            <div class="footer-logo"><i class="fa-solid fa-paper-plane"></i> Tripova</div>
+            <p>Creating unforgettable travel memories since 2020. Your adventure starts here.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="flight.html">Flights</a>
+            <a href="hotel.html">Hotels</a>
+            <a href="booking.html">My Bookings</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cancellation Policy</a>
+        </div>
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p><i class="fa-solid fa-phone"></i> +66 2 123 4567</p>
+            <p><i class="fa-solid fa-envelope"></i> hello@tripova.com</p>
+            <p><i class="fa-solid fa-location-dot"></i> Bangkok, Thailand</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Tripova | Daily Travel. All rights reserved.</p>
+        <p>Made with <i class="fa-solid fa-heart"></i> for travelers</p>
+    </div>
+</footer>
+
+<div id="modalContainer"></div>
+
+<script src="booking.js"></script>
+<script src="auth.js"></script>
+<script src="flight.js"></script>
+
+</body>
+</html>
